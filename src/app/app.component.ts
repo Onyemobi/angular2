@@ -1,10 +1,13 @@
 import { Component } from '@angular/core';
+import { StocksComponent } from './stocks.component';
+import { Stock } from './stock';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  templateUrl: 'app.component.html',
+  styleUrls: ['app.component.css'],
 })
 export class AppComponent {
-  title = 'app works!';
+  title = 'Hello Angular 2!';
+  today = new Date();
 }

@@ -4,17 +4,31 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { StocksComponent } from './stocks.component';
+import { MutualfundsComponent } from './mutualfunds/mutualfunds.component';
+import { StockDirectiveDirective } from './stock-directive.directive';
+import { HighlightDirective } from './highlight.directive';
+import { StockService } from './stock.service';
+import { DateFormatterPipe } from './date-formatter.pipe';
+import { routing } from './app.routing';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { CurrencyService} from './currency.service';
+import { BondsDirective } from './bonds.directive';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent, StocksComponent, HighlightDirective, MutualfundsComponent, StockDirectiveDirective, DateFormatterPipe, DashboardComponent, BondsDirective, DashboardComponent 
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    routing,
+    NgbModule.forRoot() 
   ],
-  providers: [],
+  providers: [StockService, CurrencyService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
